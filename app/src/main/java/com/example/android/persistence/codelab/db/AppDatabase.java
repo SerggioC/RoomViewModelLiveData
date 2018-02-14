@@ -37,7 +37,7 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static AppDatabase getInDiskDatabase(Context context) {
         if (INSTANCE == null) {
-            // inMemoryDatabaseBuilder database created with this method is lost when process is killed
+            // inMemoryDatabaseBuilder: database created with this method is lost when process is killed
             //INSTANCE = Room.inMemoryDatabaseBuilder(context.getApplicationContext(), AppDatabase.class)
             INSTANCE = Room.databaseBuilder(context.getApplicationContext(), AppDatabase.class, "RoomTestDB.db")
                     // To simplify the codelab, allow queries on the main thread.

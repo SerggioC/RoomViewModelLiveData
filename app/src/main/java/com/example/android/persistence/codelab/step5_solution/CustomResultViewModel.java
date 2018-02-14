@@ -62,8 +62,7 @@ public class CustomResultViewModel extends AndroidViewModel {
                 = mDb.loanModel().findLoansByNameAfter("Mike", getYesterdayDate());
 
         // Instead of exposing the list of Loans, we can apply a transformation and expose Strings.
-        mLoansResult = Transformations.map(loans,
-                new Function<List<LoanWithUserAndBook>, String>() {
+        mLoansResult = Transformations.map(loans, new Function<List<LoanWithUserAndBook>, String>() {
             @Override
             public String apply(List<LoanWithUserAndBook> loansWithUserAndBook) {
                 StringBuilder sb = new StringBuilder();
